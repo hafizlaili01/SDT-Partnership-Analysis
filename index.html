@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Analysis: The MIMOS & SDT Inc. Quantum Partnership</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8f7f4; /* Warm Neutral Background */
+            color: #3a3a3a;
+        }
+      .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 350px;
+            max-height: 400px;
+        }
+        @media (max-width: 768px) {
+          .chart-container {
+                height: 300px;
+            }
+        }
+      .nav-link {
+            transition: color 0.3s, border-color 0.3s;
+        }
+      .nav-link.active {
+            color: #2563eb;
+            border-bottom-color: #2563eb;
+        }
+      .tab-button.active {
+            background-color: #2563eb;
+            color: #ffffff;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <header class="bg-white/80 backdrop-blur-lg sticky top-0 z-50 shadow-sm">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="text-xl font-bold text-gray-800">Quantum Partnership Analysis</div>
+            <div class="hidden md:flex space-x-8">
+                <a href="#vision" class="nav-link text-gray-600 hover:text-blue-600 border-b-2 border-transparent pb-1">The Vision</a>
+                <a href="#partners" class="nav-link text-gray-600 hover:text-blue-600 border-b-2 border-transparent pb-1">Partners</a>
+                <a href="#technology" class="nav-link text-gray-600 hover:text-blue-600 border-b-2 border-transparent pb-1">Technology</a>
+                <a href="#roadmap" class="nav-link text-gray-600 hover:text-blue-600 border-b-2 border-transparent pb-1">Roadmap</a>
+                <a href="#analysis" class="nav-link text-gray-600 hover:text-blue-600 border-b-2 border-transparent pb-1">Analysis</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container mx-auto p-6 md:p-8 space-y-20">
+
+        <section id="vision" class="text-center pt-10">
+            <h1 class="text-4xl md:text-6xl font-black text-gray-900 leading-tight">
+                Building Malaysia's<br><span class="text-blue-600">Quantum Future</span>
+            </h1>
+            <p class="mt-4 max-w-3xl mx-auto text-lg text-gray-600">
+                An interactive exploration of the landmark partnership between MIMOS Berhad and SDT Inc. This collaboration aims to establish the Quantum Intelligence Centre and position Malaysia as a leading Quantum Hub in the ASEAN region by 2035.
+            </p>
+        </section>
+
+        <section id="partners">
+            <h2 class="text-3xl font-bold text-center mb-10 text-gray-800">The Core Partners: A Synergy of Strengths</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-white rounded-xl shadow-lg p-8 border-t-4 border-blue-500">
+                    <div class="text-5xl mb-4">🏢</div>
+                    <h3 class="text-2xl font-bold text-gray-900">MIMOS Berhad</h3>
+                    <p class="font-semibold text-blue-600">Malaysia's National R&D Powerhouse</p>
+                    <p class="mt-4 text-gray-600">As the public-sector cornerstone, MIMOS provides the foundational infrastructure, deep expertise in semiconductors and microelectronics, and a robust talent development pipeline essential for this national technology initiative.</p>
+                </div>
+                <div class="bg-white rounded-xl shadow-lg p-8 border-t-4 border-teal-500">
+                    <div class="text-5xl mb-4">🔬</div>
+                    <h3 class="text-2xl font-bold text-gray-900">SDT Inc.</h3>
+                    <p class="font-semibold text-teal-600">South Korea's Quantum Hardware Pioneer</p>
+                    <p class="mt-4 text-gray-600">A deep-tech leader, SDT Inc. brings agile, specialized expertise in designing and manufacturing the ultra-precision quantum-grade hardware and full-stack computing systems that will power the collaboration.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="technology">
+            <h2 class="text-3xl font-bold text-center mb-4 text-gray-800">Inside SDT Inc.'s Technology Portfolio</h2>
+            <p class="text-center text-gray-600 max-w-3xl mx-auto mb-10">
+                SDT Inc. employs a diversified strategy, developing core quantum technologies while leveraging its expertise in adjacent markets. This interactive module lets you explore their key offerings. Click the tabs below to switch between their main business areas.
+            </p>
+            <div class="bg-white rounded-xl shadow-lg p-8">
+                <div class="flex justify-center mb-8 border-b border-gray-200">
+                    <button class="tab-button active py-3 px-6 font-semibold text-gray-600 rounded-t-lg" data-tab="quantum">Quantum Technology</button>
+                    <button class="tab-button py-3 px-6 font-semibold text-gray-600 rounded-t-lg" data-tab="iiot">Industrial IoT</button>
+                    <button class="tab-button py-3 px-6 font-semibold text-gray-600 rounded-t-lg" data-tab="sensors">Specialized Sensors</button>
+                </div>
+
+                <div id="tab-content" class="space-y-6">
+                    </div>
+            </div>
+        </section>
+
+        <section id="roadmap">
+            <h2 class="text-3xl font-bold text-center mb-4 text-gray-800">The Road to a Quantum Hub: A Strategic Timeline</h2>
+            <p class="text-center text-gray-600 max-w-3xl mx-auto mb-10">
+                The MIMOS-SDT collaboration is a key step towards Malaysia's vision of becoming a "Quantum Hub" by 2035. This line graph visualizes the projected qubit development goals for SDT's multiple quantum computer platforms, while the timeline highlights key milestones for the partnership.
+            </p>
+            <div class="bg-white rounded-xl shadow-lg p-8">
+                <h3 class="text-xl font-bold text-center mb-6 text-gray-900">Target Qubit Growth Over Time</h3>
+                <div class="chart-container">
+                    <canvas id="qubitRoadmapChart"></canvas>
+                </div>
+            </div>
+        </section>
+        
+        <section id="structure">
+             <h2 class="text-3xl font-bold text-center mb-4 text-gray-800">Deconstructing the Partnership</h2>
+             <p class="text-center text-gray-600 max-w-3xl mx-auto mb-10">
+                This collaboration is a complex, multi-layered public-private-foreign initiative. The diagram below clarifies the roles and relationships between the key entities involved in establishing the Quantum Intelligence Centre (QIC) and the broader "Quantum Valley" vision.
+            </p>
+            <div class="bg-white rounded-xl shadow-lg p-8">
+                <div class="flex flex-col items-center space-y-6">
+                    <div class="flex flex-col md:flex-row items-center gap-6">
+                        <div class="text-center p-4 border-2 border-dashed border-gray-300 rounded-lg w-64">
+                            <div class="text-3xl mb-2">🇲🇾</div>
+                            <h4 class="font-bold">MIMOS Berhad</h4>
+                            <p class="text-sm text-gray-500">Strategic Alliance Partner (Infrastructure & Talent)</p>
+                        </div>
+                        <div class="font-bold text-2xl text-blue-500">&harr;</div>
+                        <div class="text-center p-4 border-2 border-dashed border-gray-300 rounded-lg w-64">
+                            <div class="text-3xl mb-2">🇰🇷</div>
+                            <h4 class="font-bold">SDT Inc.</h4>
+                            <p class="text-sm text-gray-500">Strategic Alliance Partner (Quantum Hardware)</p>
+                        </div>
+                    </div>
+                    
+                    <div class="font-bold text-4xl text-gray-400">&darr;</div>
+
+                    <div class="bg-gray-100 rounded-lg p-6 text-center w-full max-w-4xl">
+                        <h3 class="text-xl font-bold text-gray-900">Core Project: Quantum Intelligence Centre (QIC)</h3>
+                        <p class="text-gray-600 mt-2 text-sm">Operated via a dedicated Joint Venture (JV) to combine specialized technologies.</p>
+                        <div class="mt-6 flex flex-col md:flex-row justify-center items-stretch gap-4">
+                            <div class="bg-white p-4 rounded-lg shadow-md flex-1 text-left">
+                                <h5 class="font-semibold text-teal-600">SDT Inc.</h5>
+                                <p class="text-sm text-gray-500">Provides Quantum Control Equipment & System Assembly.</p>
+                            </div>
+                             <div class="flex items-center font-bold text-xl text-gray-400">+</div>
+                            <div class="bg-white p-4 rounded-lg shadow-md flex-1 text-left">
+                                <h5 class="font-semibold text-teal-600">Anyon Technologies</h5>
+                                <p class="text-sm text-gray-500">Contributes proprietary QPU & Dilution Refrigerator.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="font-bold text-4xl text-gray-400">&darr;</div>
+
+                    <div class="bg-blue-50 border-blue-200 border rounded-lg p-6 text-center w-full max-w-4xl">
+                         <h3 class="text-xl font-bold text-gray-900">National Security Application</h3>
+                         <p class="text-gray-600 mt-2 text-sm">The partnership extends to national security, leveraging quantum communication technology.</p>
+                         <div class="mt-4 flex justify-center items-center gap-4">
+                            <div class="font-semibold text-gray-700">Collaboration with:</div>
+                            <div class="bg-white p-3 rounded-lg shadow-md">
+                                <h5 class="font-semibold text-blue-700">National Cyber Security Agency (NACSA)</h5>
+                                <p class="text-sm text-gray-500">To build a national Quantum Cryptography Network.</p>
+                            </div>
+                         </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="analysis">
+            <h2 class="text-3xl font-bold text-center mb-10 text-gray-800">Strategic Analysis: Pros vs. Cons</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-white rounded-xl shadow-lg p-8 border-l-4 border-green-500">
+                    <h3 class="text-2xl font-bold text-green-600 mb-4">Advantages (Pros)</h3>
+                    <ul class="space-y-4 text-gray-700">
+                        <li class="flex items-start"><span class="text-green-500 mr-3 mt-1">✔</span><div><strong class="font-semibold">Synergistic Capabilities:</strong> Combines SDT's agile hardware expertise with MIMOS's robust R&D infrastructure, accelerating development.</div></li>
+                        <li class="flex items-start"><span class="text-green-500 mr-3 mt-1">✔</span><div><strong class="font-semibold">Strategic Market Entry:</strong> Provides SDT a credible foothold in Southeast Asia and positions Malaysia as a regional tech leader.</div></li>
+                        <li class="flex items-start"><span class="text-green-500 mr-3 mt-1">✔</span><div><strong class="font-semibold">Ecosystem Catalyst:</strong> Spurs talent development and attracts global investment, fueling the "Quantum Valley" vision.</div></li>
+                    </ul>
+                </div>
+                <div class="bg-white rounded-xl shadow-lg p-8 border-l-4 border-red-500">
+                    <h3 class="text-2xl font-bold text-red-600 mb-4">Challenges (Cons)</h3>
+                    <ul class="space-y-4 text-gray-700">
+                        <li class="flex items-start"><span class="text-red-500 mr-3 mt-1">✖</span><div><strong class="font-semibold">High Investment & Risk:</strong> Quantum R&D is extremely costly with a long-term, uncertain commercial payoff.</div></li>
+                        <li class="flex items-start"><span class="text-red-500 mr-3 mt-1">✖</span><div><strong class="font-semibold">Rapid Obsolescence:</strong> Hardware built today may be outdated quickly, requiring constant, agile adaptation.</div></li>
+                        <li class="flex items-start"><span class="text-red-500 mr-3 mt-1">✖</span><div><strong class="font-semibold">Governance Complexity:</strong> Managing a multi-national, public-private partnership presents significant coordination challenges.</div></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-xl shadow-lg p-8 mt-10">
+                <h3 class="text-2xl font-bold text-center mb-6 text-gray-900">Commercial Engagement & Revenue Models</h3>
+                <p class="text-gray-600 mb-6">The MIMOS-SDT partnership is a highly strategic, commercially-focused collaboration. The global quantum computing market is projected to reach $125 billion by 2030, with the Asia-Pacific region expected to be the fastest-growing market at a 40% compound annual growth rate.[8] This collaboration is designed to capitalize on that growth through several key, commercially viable revenue streams for both parties.</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div>
+                        <h4 class="font-bold text-lg text-gray-900 border-b border-gray-200 pb-2 mb-4">SDT Inc. Revenue Streams</h4>
+                        <ul class="space-y-4 text-gray-700">
+                            <li><strong class="font-semibold">Quantum-as-a-Service (QaaS):</strong> As a key provider in the joint venture, SDT can offer cloud-based access to the quantum computing resources at the Quantum Intelligence Centre. This "pay-as-you-go" or subscription model lowers the barrier to entry for businesses, allowing them to run quantum algorithms and solutions without needing to invest in expensive hardware.[9, 10] The QIC is designed to serve as a hybrid data center for specialized tasks, such as solving complex problems in finance, AI, and biotechnology.[3, 10]</li>
+                            <li><strong class="font-semibold">Hardware Sales & Licensing:</strong> SDT's core business as a quantum-grade Original Design Manufacturer (ODM) allows it to generate revenue by exporting and selling its ultra-precision quantum measurement and control equipment, like the Qubit Controller Unit (QCU), to other research institutions and companies across Asia.[1] This also includes the potential to sell full-stack quantum computers.[11]</li>
+                            <li><strong class="font-semibold">Professional Services & Consulting:</strong> SDT can leverage its deep-tech expertise to provide specialized consulting services to clients. This model allows the company to generate revenue by offering technical knowledge and implementation support to enterprises looking to integrate quantum solutions into their industrial settings and digital transformation initiatives.[1, 12]</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-lg text-gray-900 border-b border-gray-200 pb-2 mb-4">MIMOS Berhad Revenue Streams</h4>
+                        <ul class="space-y-4 text-gray-700">
+                            <li><strong class="font-semibold">Technology Licensing & Commercialization:</strong> As a government-backed national R&D center, MIMOS's primary commercial model is to monetize intellectual property developed at the QIC. This involves licensing new quantum-related technologies to private firms and fostering the creation of new spin-off companies, which aligns with its goal of creating a "Quantum Valley" ecosystem.[13, 14]</li>
+                            <li><strong class="font-semibold">Talent Development & Training:</strong> MIMOS can generate significant revenue by offering specialized, hands-on industrial upskilling programs to train the next generation of quantum researchers and engineers. This service is crucial for meeting the future workforce demands of the quantum industry and is a key part of MIMOS's mission.[15, 16]</li>
+                            <li><strong class="font-semibold">Shared Facilities Access:</strong> MIMOS has a business model of providing access to its world-class facilities to industry partners and academia.[15] The newly established QIC can be a key revenue driver, allowing external companies to use the quantum hardware, labs, and equipment for their own research and development projects for a fee.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-xl shadow-lg p-8 mt-10">
+                <h3 class="text-2xl font-bold text-center mb-6 text-gray-900">SDT Inc. Product Portfolio & Benefits to MIMOS</h3>
+                <div class="overflow-x-auto">
+                    <table class="min-w-full divide-y divide-gray-200">
+                        <thead>
+                            <tr>
+                                <th class="px-4 py-2 text-left text-sm font-semibold text-gray-700">Category</th>
+                                <th class="px-4 py-2 text-left text-sm font-semibold text-gray-700">Product/Service</th>
+                                <th class="px-4 py-2 text-left text-sm font-semibold text-gray-700">Key Description</th>
+                                <th class="px-4 py-2 text-left text-sm font-semibold text-gray-700">Benefit to MIMOS Berhad</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-gray-200">
+                            <tr>
+                                <td class="px-4 py-4 text-sm text-gray-500 font-semibold">Quantum Technology (Hardware)</td>
+                                <td class="px-4 py-4 text-sm text-gray-500">Qubit Controller Unit (QCU), Pulse Generator Unit (PGU), etc.</td>
+                                <td class="px-4 py-4 text-sm text-gray-500">Ultra-precision devices for high-frequency signal generation and analysis to control qubits.[1]</td>
+                                <td class="px-4 py-4 text-sm text-gray-500">Provides essential hardware for quantum computer manufacturing, allowing MIMOS to build the Quantum Intelligence Centre without developing technology from scratch.[2, 3, 4]</td>
+                            </tr>
+                            <tr>
+                                <td class="px-4 py-4 text-sm text-gray-500 font-semibold">Quantum Technology (Full-Stack)</td>
+                                <td class="px-4 py-4 text-sm text-gray-500">Theta, Nu, Phi, Delta Quantum Computers</td>
+                                <td class="px-4 py-4 text-sm text-gray-500">SDT is developing four types of quantum computers to be integrated into hybrid data centers for complex problem-solving.[5]</td>
+                                <td class="px-4 py-4 text-sm text-gray-500">Enables the establishment of a physical, world-class quantum R&D facility in Malaysia, positioning the country as a regional leader in quantum technology.[2, 3, 4]</td>
+                            </tr>
+                            <tr>
+                                <td class="px-4 py-4 text-sm text-gray-500 font-semibold">Industrial IoT</td>
+                                <td class="px-4 py-4 text-sm text-gray-500">SDT Cloud</td>
+                                <td class="px-4 py-4 text-sm text-gray-500">An intelligent analytics platform for real-time sensing, analysis, and control of industrial devices.[6]</td>
+                                <td class="px-4 py-4 text-sm text-gray-500">Complements MIMOS's core competencies in embedded microelectronics and IoT systems, providing a commercial platform for joint R&D and digital transformation initiatives.[7]</td>
+                            </tr>
+                            <tr>
+                                <td class="px-4 py-4 text-sm text-gray-500 font-semibold">Specialized Sensor Devices</td>
+                                <td class="px-4 py-4 text-sm text-gray-500">Distributed Temperature Sensing (DTS)</td>
+                                <td class="px-4 py-4 text-sm text-gray-500">A system leveraging quantum optics to monitor temperature over long distances via fiber optic cables.[6]</td>
+                                <td class="px-4 py-4 text-sm text-gray-500">Offers a practical, commercially viable application of quantum-related technologies that can be adapted for Malaysia's industrial needs, showcasing a clear commercialization path for quantum R&D.[3]</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="text-center mt-16 py-8 border-t border-gray-200">
+        <p class="text-gray-500">An interactive application based on the "Strategic Analysis of the MIMOS Berhad-SDT Inc. Partnership" report.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // --- Data Store ---
+            const sdtProducts = {
+                quantum: {
+                    title: 'Core Quantum Hardware & Full-Stack Systems',
+                    description: 'SDT develops both the foundational components for controlling qubits and complete quantum computers across multiple platforms.',
+                    items: [
+                        { name: 'Qubit Controller Unit (QCU)', desc: 'Ultra-precision device for qubit signal generation and analysis.' },
+                        { name: 'QuREKA', desc: 'An integrated quantum education and R&D kit designed for students and researchers to learn and apply quantum computing principles.'},
+                        { name: 'Theta Quantum Computer', desc: 'Superconducting system with a goal of over 100 qubits by late 2027.' },
+                        { name: 'Nu Quantum Computer', desc: 'Silicon spin system with a goal of 50 qubits by mid-2027.' },
+                        { name: 'Phi Quantum Computer', desc: 'Neutral atom system with a goal of over 300 qubits by late 2026.' }
+                    ]
+                },
+                iiot: {
+                    title: 'Industrial Internet of Things (IIoT)',
+                    description: 'SDT extends its expertise into industrial applications with an intelligent analytics platform.',
+                    items: [
+                        { name: 'SDT Cloud', desc: 'An intelligent analytics platform that enables real-time sensing, analysis, and control of industrial devices.' }
+                    ]
+                },
+                sensors: {
+                    title: 'Specialized Sensor Devices',
+                    description: 'The company leverages its deep knowledge of physics and optics to create advanced sensor technologies for established markets.',
+                    items: [
+                        { name: 'Distributed Temperature Sensing (DTS)', desc: 'A system leveraging quantum optics to monitor temperature over long distances via fiber optic cables.' },
+                        { name: 'Laser-Induced Breakdown Spectroscopy (LIBS)', desc: 'Non-destructive elemental analysis device for on-site, real-time material analysis.' },
+                        { name: 'QRNG Camera', desc: 'A camera that utilizes quantum randomness for applications in secure communication, encryption, and statistical modeling.'}
+                    ]
+                }
+            };
+            
+            // --- Navigation Logic ---
+            const navLinks = document.querySelectorAll('.nav-link');
+            const sections = document.querySelectorAll('main section');
+
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.4
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        navLinks.forEach(link => {
+                            link.classList.remove('active');
+                            if (link.getAttribute('href').substring(1) === entry.target.id) {
+                                link.classList.add('active');
+                            }
+                        });
+                    }
+                });
+            }, observerOptions);
+
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+
+            // --- Tab Logic for SDT Technology ---
+            const tabButtons = document.querySelectorAll('.tab-button');
+            const tabContentContainer = document.getElementById('tab-content');
+
+            function renderTabContent(tabKey) {
+                const content = sdtProducts[tabKey];
+                let itemsHtml = content.items.map(item => `
+                    <div class="border-l-4 border-teal-500 pl-4">
+                        <h4 class="font-semibold text-gray-800">${item.name}</h4>
+                        <p class="text-gray-600 text-sm">${item.desc}</p>
+                    </div>
+                `).join('');
+
+                tabContentContainer.innerHTML = `
+                    <h3 class="text-xl font-bold text-gray-900">${content.title}</h3>
+                    <p class="text-gray-600">${content.description}</p>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">${itemsHtml}</div>
+                `;
+            }
+
+            tabButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    tabButtons.forEach(btn => btn.classList.remove('active'));
+                    button.classList.add('active');
+                    renderTabContent(button.dataset.tab);
+                });
+            });
+
+            // Initial render
+            renderTabContent('quantum');
+
+            // --- Chart.js Logic ---
+            const qubitRoadmapCtx = document.getElementById('qubitRoadmapChart').getContext('2d');
+            const labels = ['Late 2026', 'Mid 2027', 'Late 2027', '2035'];
+            
+            const wrapLabel = (label, maxLength = 16) => {
+                if(typeof label!== 'string') return label;
+                if (label.length <= maxLength) return label;
+                const words = label.split(' ');
+                const lines = [];
+                let currentLine = '';
+                words.forEach(word => {
+                    if ((currentLine + word).length > maxLength) {
+                        lines.push(currentLine.trim());
+                        currentLine = '';
+                    }
+                    currentLine += word + ' ';
+                });
+                lines.push(currentLine.trim());
+                return lines;
+            };
+
+            const processedLabels = labels.map(label => wrapLabel(label));
+
+            new Chart(qubitRoadmapCtx, {
+                type: 'line',
+                data: {
+                    labels: processedLabels,
+                    datasets: [
+                        {
+                            label: 'Phi (Neutral Atom)',
+                            data: [300, 300, 300, 300],
+                            borderColor: 'rgb(59, 130, 246)',
+                            backgroundColor: 'rgba(59, 130, 246, 0.5)',
+                            tension: 0.4,
+                            pointRadius: 5,
+                            pointHoverRadius: 8
+                        },
+                        {
+                            label: 'Nu (Silicon Spin)',
+                            data: [0, 50, 50, 50],
+                            borderColor: 'rgb(16, 185, 129)',
+                            backgroundColor: 'rgba(16, 185, 129, 0.5)',
+                            tension: 0.4,
+                            pointRadius: 5,
+                            pointHoverRadius: 8
+                        },
+                        {
+                            label: 'Theta (Superconducting)',
+                            data: [0, 0, 100, 100],
+                            borderColor: 'rgb(239, 68, 68)',
+                            backgroundColor: 'rgba(239, 68, 68, 0.5)',
+                            tension: 0.4,
+                            pointRadius: 5,
+                            pointHoverRadius: 8
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        x: {
+                            title: {
+                                display: true,
+                                text: 'Target Year',
+                                font: { size: 14, weight: 'bold' }
+                            }
+                        },
+                        y: {
+                            beginAtZero: true,
+                            title: {
+                                display: true,
+                                text: 'Number of Qubits',
+                                font: { size: 14, weight: 'bold' }
+                            }
+                        }
+                    },
+                    plugins: {
+                        legend: {
+                            position: 'top',
+                             labels: {
+                                font: {
+                                    size: 14,
+                                    family: 'Inter'
+                                }
+                            }
+                        },
+                        tooltip: {
+                            callbacks: {
+                                title: function(tooltipItems) {
+                                    const item = tooltipItems[0];
+                                    let label = item.chart.data.labels[item.dataIndex];
+                                    return Array.isArray(label)? label.join(' ') : label;
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
